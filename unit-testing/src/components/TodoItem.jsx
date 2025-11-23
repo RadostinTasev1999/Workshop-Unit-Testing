@@ -1,21 +1,24 @@
-import { useState } from "react"
+// import { useState } from "react"
 
 export default function TodoItem({
   _id,
   text,
-  isCompleted
+  isCompleted,
+  onToggle
 }) {
 
-  const [input, setInput] = useState(() => {
-      return isCompleted
-  })
+  // const [input, setInput] = useState(() => {
+  //     return isCompleted
+  // })
 
-  const handleChange = () => {
-    //const target = e.target
-    const isChecked = isCompleted ? false : true
+  // const handleChange = () => {
+  //   //const target = e.target
+  //   const isChecked = isCompleted ? false : true
 
-    setInput(isChecked)
-  }
+  //   setInput(isChecked)
+  // }
+
+  
   
   return (
     <>
@@ -25,8 +28,8 @@ export default function TodoItem({
           id="todo1"
           name="todo1"
           type="checkbox"
-          checked={input} //false
-          onChange={handleChange}
+          checked={isCompleted}
+          onChange={() => onToggle(_id)}
           className="h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded"
         />
         <label htmlFor="todo1" className="ml-3 block text-gray-900">
