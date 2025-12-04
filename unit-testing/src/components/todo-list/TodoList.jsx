@@ -31,7 +31,7 @@ export default function TodoList(){
            {
            todos.length > 0
                 ?
-        todos.map((todo) => <TodoItem {...todo} key={todo._id} onToggle={handleChange} />)
+        todos.map((todo) => <TodoItem {...todo} key={todo._id } onToggle={handleChange} />)
                 :
                 ""
            }
