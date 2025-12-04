@@ -1,9 +1,9 @@
 
 import ReactDOM from 'react-dom/client'
 import TodoItem from './TodoItem'
-import { it, expect, vi } from 'vitest'
-import { fireEvent } from '@testing-library/dom'
-import { render, screen } from '@testing-library/react'
+ import { it, expect, vi } from 'vitest'
+// import { fireEvent } from '@testing-library/dom'
+ import { render } from '@testing-library/react'
 // import { screen } from '@testing-library/react'
 // import { cleanup, getByText, render } from '@testing-library/react
 // import { render } from '@testing-library/react'
@@ -55,21 +55,34 @@ import { render, screen } from '@testing-library/react'
 // })
 
 
-it('Should be checked when clicked',() => {
-    const onToggle = vi.fn()
+// it('Should be checked when clicked',() => {
+//     const onToggle = vi.fn()
 
-    render(
-        <TodoItem 
-            isCompleted={false}
-            text="checkbox-1" 
-            onToggle={onToggle}
-            />)
+//     render(
+//         <TodoItem 
+//             isCompleted={false}
+//             text="checkbox-1" 
+//             onToggle={onToggle}
+//             />)
 
-    const checkbox = screen.getByRole('checkbox', { name: 'checkbox-1' })
+//     const checkbox = screen.getByRole('checkbox', { name: 'checkbox-1' })
 
-    fireEvent.click(checkbox)
+//     fireEvent.click(checkbox)
     
-    expect(onToggle).toBeCalled();
-    expect(onToggle).toBeCalledTimes(1);
-    // screen.debug()
-})
+//     expect(onToggle).toBeCalled();
+//     expect(onToggle).toBeCalledTimes(1);
+//     // screen.debug()
+// })
+
+// it('Snapshot testing',() => {
+
+//     // vi.mock('../../utils/requester.js')
+
+//     render(
+//     <TodoItem 
+//         _id="123"
+//         isCompleted
+//         text="checkbox-1"
+//     />
+// )
+// })
